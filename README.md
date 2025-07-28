@@ -315,12 +315,14 @@ public class ProductsController : Controller
 - **Database Indicator**: This operation triggers the log message "Retrieved products from database"
 <img width="1920" height="1080" alt="Screenshot (379)" src="https://github.com/user-attachments/assets/4890d47a-7afb-45cf-b60c-cc4f96700632" />
 <img width="1563" height="419" alt="Screenshot 2025-07-28 231418" src="https://github.com/user-attachments/assets/dfbf4f1f-0ada-4a45-b1e9-ca475927daac" />
+---
 
 ### Subsequent Requests (Cache Utilization)
 - **Refreshed View**: Subsequent page refreshes (e.g., 28/07/2025 23:14:28) serve data from memory cache
 - **Cache Confirmation**: The identical "Last Updated" timestamps (22:28:02) for all products confirm cached data is being served
 - **Performance Benefit**: Cache hits are significantly faster than database queries, as shown by rapid timestamp updates in the "Last loaded" field
-<img width="1920" height="1080" alt="Screenshot (379)" src="https://github.com/user-attachments/assets/c72757f1-cc32-408f-ad7d-efe47539a9d6" />
+<img width="1564" height="431" alt="Screenshot 2025-07-28 231444" src="https://github.com/user-attachments/assets/1351309c-5fc1-42bf-8c7b-a0c300e70ac2" />
+---
 
 ### Cache Management Features
 - **Manual Cache Clearance**: The "Clear Cache" button forces immediate cache invalidation
