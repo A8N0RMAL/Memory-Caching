@@ -318,7 +318,7 @@ public class ProductsController : Controller
 ---
 
 ### Subsequent Requests (Cache Utilization)
-- **Refreshed View**: Subsequent page refreshes (e.g., 28/07/2025 23:14:28) serve data from memory cache
+- **Refreshed View**: Subsequent page refreshes (e.g., 28/07/2025 23:14:23) serve data from memory cache
 - **Cache Confirmation**: The identical "Last Updated" timestamps (22:28:02) for all products confirm cached data is being served
 - **Performance Benefit**: Cache hits are significantly faster than database queries, as shown by rapid timestamp updates in the "Last loaded" field
 <img width="1564" height="431" alt="Screenshot 2025-07-28 231444" src="https://github.com/user-attachments/assets/1351309c-5fc1-42bf-8c7b-a0c300e70ac2" />
