@@ -1,6 +1,5 @@
 # Memory Caching in ASP.NET Core - Code Explanation
 
-# Building a Product with Database and Memory Caching
 Let's build Database with Entity Framework Core and ASP.NET Core Identity, then implement memory caching.
 
 ## Step 1: Set Up the Database
@@ -305,4 +304,28 @@ public class ProductsController : Controller
    - Refresh (should use cache)
    - Add new product (should invalidate cache)
    - Click "Clear Cache" button
-   - Wait 5 minutes to see cache expiration
+   - Wait 30 minutes to see cache expiration
+---
+
+## Step 7: Output - Memory Caching Behavior Analysis
+
+### Initial Data Load (Database Fetch)
+- **First Request**: When the application loads initially, the system retrieves product data directly from the database
+- **Evidence**: The "Last loaded" timestamp (28/07/2025 23:14:07) shows the initial request time
+- **Database Indicator**: This operation triggers the log message "Retrieved products from database"
+<img width="1920" height="1080" alt="Screenshot (379)" src="https://github.com/user-attachments/assets/4890d47a-7afb-45cf-b60c-cc4f96700632" />
+<img width="1563" height="419" alt="Screenshot 2025-07-28 231418" src="https://github.com/user-attachments/assets/dfbf4f1f-0ada-4a45-b1e9-ca475927daac" />
+
+### Subsequent Requests (Cache Utilization)
+- **Refreshed View**: Subsequent page refreshes (e.g., 28/07/2025 23:14:28) serve data from memory cache
+- **Cache Confirmation**: The identical "Last Updated" timestamps (22:28:02) for all products confirm cached data is being served
+- **Performance Benefit**: Cache hits are significantly faster than database queries, as shown by rapid timestamp updates in the "Last loaded" field
+<img width="1920" height="1080" alt="Screenshot (379)" src="https://github.com/user-attachments/assets/c72757f1-cc32-408f-ad7d-efe47539a9d6" />
+
+### Cache Management Features
+- **Manual Cache Clearance**: The "Clear Cache" button forces immediate cache invalidation
+- **Automatic Expiration**: Cache is configured with:
+  - 30-minute sliding expiration (resets timer on each access)
+  - 1-hour absolute expiration (maximum cache lifetime)
+- **Cache Eviction**: System logs eviction events when cache is cleared or expires
+---
