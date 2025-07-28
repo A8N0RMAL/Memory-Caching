@@ -1,7 +1,5 @@
 # Memory Caching in ASP.NET Core - Code Explanation
 
-Let's build Database with Entity Framework Core and ASP.NET Core Identity, then implement memory caching.
-
 ## Step 1: Set Up the Database
 
 ### 1. Install required NuGet packages:
