@@ -1,0 +1,31 @@
+﻿@model List<Product>
+
+<h1>Products List</h1>
+<p>Last loaded: @DateTime.Now</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Last Updated</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price.ToString("C")</td>
+                <td>@product.LastUpdated.ToLocalTime()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="mt-4">
+    <a asp-action="Create" class="btn btn-primary">Add New Product</a>
+    <a asp-action="ClearCache" class="btn btn-danger">Clear Cache</a>
+</div>
